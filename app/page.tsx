@@ -1,14 +1,22 @@
 'use client'
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation'; // Change import to next/navigation
 
 const Home = () => {
+  const router = useRouter();
   const [showLittleAndS, setShowLittleAndS] = useState(false);
   const [showStockpile, setShowStockpile] = useState(false);
 
   useEffect(() => {
+    // Show splash screen animation
     setTimeout(() => setShowLittleAndS(true), 1000);
-    setTimeout(() => setShowStockpile(true), 2000); // Adjust duration to match typing effect
-  }, []);
+    setTimeout(() => setShowStockpile(true), 2000);
+
+    // Navigate to login screen after 5 seconds
+    setTimeout(() => {
+      router.push('/auth'); // Redirect using next/navigation
+    }, 8000); // 5000 milliseconds = 5 seconds
+  }, [router]);
 
   return (
     <main className="min-h-screen flex items-center justify-center bg-white text-black animate-fadeIn">
@@ -20,7 +28,7 @@ const Home = () => {
           <div className="logo-text flex items-center">
             {showLittleAndS && (
               <>
-                <p className="text-black font-normal text-lg font-Poppins mr-2 animate-fadeIn">
+                <p className="text-black font-normal text-lg font-Poppins mr-2 animate-fadeIn ">
                   Little
                 </p>
                 <p className="text-purple-600 font-medium text-4xl leading-tight font-Poppins animate-fadeIn">
