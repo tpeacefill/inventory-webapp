@@ -1,5 +1,5 @@
-import { Poppins } from "next/font/google";
-import type { Config } from "tailwindcss";
+import { Poppins } from 'next/font/google';
+import type { Config } from 'tailwindcss';
 
 const config: Config = {
   content: [
@@ -9,17 +9,30 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        typing: {
+          '0%': { width: '0%' },
+          '100%': { width: '100%' },
+        },
+      },
+      animation: {
+        fadeIn: 'fadeIn 1s ease-in-out forwards',
+        typing: 'typing 2s steps(10, end) forwards',
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        
+        "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       fontFamily: {
-        Poppins: ['var(--poppins)']
-      }
+        Poppins: ['var(--poppins)'],
+      },
     },
   },
   plugins: [],
 };
+
 export default config;
