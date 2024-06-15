@@ -1,25 +1,15 @@
+// LoginPage.js
 import React from 'react';
 import '../auth/page.css';
+import ImageLeft from './ImageLeft';
 
 const LoginPage = () => {
   return (
     <div className='bg-white min-h-screen w-screen flex justify-center items-center'>
-      <div className='min-h-[80vh] w-11/12 lg:w-3/4 flex flex-col lg:flex-row justify-between'>
+      <div className='min-h-[80vh] w-11/12 lg:w-3/4 flex flex-col lg:flex-row justify-between h-full'>
         
         {/* Left Side (Image Section) */}
-        <div className='flex-1 bg-cover bg-center lg:rounded-tr-[70px] lg:rounded-bl-[70px]'
-             style={{ backgroundImage: 'url("/loginImage.png")' }}>
-          <div className='flex flex-col justify-start items-start p-4 h-full'>
-            <div className='flex flex-col justify-center items-center'>
-              <img src="/Logo.svg" alt="Logo" className='h-[70px] w-[70px]' />
-              <div className='flex flex-row mt-1 justify-center items-center'>
-                <p className="font-Poppins text-black mr-1">Little</p>
-                <p className="text-xl font-medium text-purple-500 font-Poppins">S</p>
-                <p className="font-Poppins text-black">tockpile</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <ImageLeft />
         
         {/* Right Side (Login Form Section) */}
         <div className='flex-1 flex flex-col justify-center items-center mt-8 lg:mt-0'>
@@ -47,7 +37,7 @@ const LoginPage = () => {
             </div>
           </div>
         </div>
-        
+
       </div>
     </div>
   );
