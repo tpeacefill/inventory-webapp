@@ -1,0 +1,182 @@
+.loginPage {
+    background-color: white;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginContent {
+    height: 80%;
+    width: 76%;
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+    justify-content: space-between;
+}
+
+.loginImage {
+    height: 100%;
+    width: 49%;
+    background-image: url("/loginImage.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 0px 70px 0px 70px;
+}
+
+.loginForm {
+    height: 100%;
+    width: 49%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logoContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 1rem;
+}
+
+.logoContainer-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    height: 70px;
+    width: 70px;
+}
+
+.logoText {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.loginForm-content {
+    height: 90%;
+    width: 80%;
+    background-color: transparent;
+}
+
+.loginForm-texts {
+    margin-bottom: 2rem;
+}
+
+.loginForm-heading {
+    color: #000;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 2rem;
+}
+
+.loginFom-paragraph {
+    color: rgba(0, 0, 0, 0.50);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.actual-login {
+    width: 80%;
+}
+
+.actual-logintext {
+    color: #A461E5;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    color: #A461E5;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin-bottom: 0.5rem;
+}
+
+.input-text {
+    width: 90%;
+    height: 50px;
+    border-radius: 5px;
+    border: 0.5px solid rgba(0, 0, 0, 0.50);
+    background: transparent;
+    color: rgba(0, 0, 0, 0.50);
+}
+
+.email-input {
+    margin-bottom: 1rem;
+}
+
+.password-input {
+    margin-bottom: 1rem;
+}
+
+.forgot-passwordbox a {
+    color: #A461E5;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.forgot-passwordbox {
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+}
+
+.login-button {
+    height: 50px;
+    width: 90%;
+    justify-content: center;
+    align-content: center;
+    color: white;
+    background-color: #A461E5;
+    border-radius: 5px;
+    border: none;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 5px;
+    }
+    .loginImage, .loginForm {
+        width: 100%;
+        margin: 0;
+    }
+    .loginForm {
+        margin-top: 10px;
+    }
+    .title, .subtitle, .login-title, .input-label {
+        max-width: 100%;
+    }
+    .forgot-password {
+        margin-right: 2.5px;
+    }
+    .login-button {
+        padding: 5px;
+        max-width: 100%;
+    }
+}
