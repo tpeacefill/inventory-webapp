@@ -1,17 +1,14 @@
 'use client';
 import React from 'react';
-import ImageLeft from '../components/ImageLeft';
-import InputField from '../components/InputField';
+import ImageLeft from '../components/ImageLeft'; // Adjusted import path
+import InputField from '../components/InputField'; // Adjusted import path
+import Link from 'next/link'; // Import Link from next/link
 
 const LoginPage: React.FC = () => {
   return (
     <div className='bg-white min-h-screen w-screen flex justify-center items-center'>
       <div className='min-h-[80vh] w-11/12 lg:w-3/4 flex flex-col lg:flex-row justify-between h-full'>
-        
-        {/* Left Side (Image Section) */}
         <ImageLeft />
-        
-        {/* Right Side (Login Form Section) */}
         <div className='flex-1 flex flex-col justify-center items-center mt-8 lg:mt-0'>
           <div className='w-4/5 flex flex-col justify-center items-center'>
             <div className='lg:mt-0 mt-10'>
@@ -24,7 +21,9 @@ const LoginPage: React.FC = () => {
                 <InputField label="Enter email" type="email" placeholder="Enter your email" />
                 <InputField label="Enter password" type="password" placeholder="Enter your password" />
                 <div className="w-full flex justify-end mb-4">
-                  <a href="#" className='text-purple-500 text-base font-medium font-Poppins'>Forgot password?</a>
+                  <Link href="/auth/ForgotPassword"  className='text-purple-500 text-base font-medium font-Poppins'>
+                    Forgot password?
+                  </Link>
                 </div>
                 <button className="w-full h-12 flex justify-center items-center text-white bg-purple-500 rounded text-lg font-normal font-Poppins">Log In</button>
               </div>
