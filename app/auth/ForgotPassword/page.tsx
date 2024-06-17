@@ -20,7 +20,7 @@ const ForgotPassword: React.FC = () => {
                 <div className="w-full flex justify-end mb-4">
                 </div>
                 <p className='font-Poppins text-base font-light text-purple-500 mb-4'>Enter email associated with account</p>
-                <button className="w-full h-12 flex justify-center items-center text-white bg-purple-500 rounded text-lg font-normal font-Poppins">Log In</button>
+                <button className="w-full h-12 flex justify-center items-center text-white bg-purple-500 rounded text-lg font-normal font-Poppins">Confirm</button>
               </div>
             </div>
           </div>
