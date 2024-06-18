@@ -13,8 +13,8 @@ const ForgotPassword: React.FC = () => {
 
   return (
     <div className='bg-white min-h-screen w-screen flex justify-center items-center relative'>
-      {isBlurVisible && <BlurWithModal />} {/* Conditionally render BlurWithModal */}
-      <div className='min-h-[80vh] w-11/12 lg:w-3/4 flex flex-col lg:flex-row justify-between h-full z-10 gap-5'>
+      {isBlurVisible && <BlurWithModal />}
+      <div className='min-h-[80vh] w-11/12 lg:w-3/4 flex flex-col lg:flex-row justify-between h-full z-10 gap-8'>
         <ImageLeft />
         <div className='flex-1 flex flex-col justify-center items-center mt-8 lg:mt-0'>
           <div className='w-4/5 flex flex-col justify-center items-center'>
