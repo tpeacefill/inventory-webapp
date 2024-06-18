@@ -2,10 +2,6 @@ import React from 'react';
 import CustomModal from '../components/CustomModal';
 
 const BlurWithModal: React.FC = () => {
-    const handleButtonClick = () => {
-        // Handle button click logic here
-        console.log('/auth/ResetPassword');
-      };
   return (
     <div className="fixed inset-0 flex justify-end items-center z-20">
       <div className="w-1/2 h-full bg-custom-gray backdrop-blur-custom flex justify-center items-center">
@@ -27,7 +23,7 @@ const BlurWithModal: React.FC = () => {
             }
             title="Email Sent"
             message="We’ve sent an email to peacefillt**@outlook.com with a link to reset your password"
-            onClick={handleButtonClick}
+            href='/auth/ResetPassword'
           />
         </div>
       </div>
@@ -36,5 +32,4 @@ const BlurWithModal: React.FC = () => {
 }
 
 export default BlurWithModal;
-
 
