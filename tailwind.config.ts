@@ -19,6 +19,12 @@ const config: Config = {
           '100%': { width: '100%' },
         },
       },
+      colors: {
+        'custom-gray': 'rgba(80, 80, 80, 0.17)',
+      },
+      backdropBlur: {
+        'custom': '1.5px',
+      },
       animation: {
         fadeIn: 'fadeIn 1s ease-in-out forwards',
         typing: 'typing 2s steps(10, end) forwards',

@@ -1,8 +1,8 @@
 'use client';
 import React from 'react';
-import ImageLeft from '../components/ImageLeft'; // Adjusted import path
-import InputField from '../components/InputField'; // Adjusted import path
-import Link from 'next/link'; // Import Link from next/link
+import ImageLeft from '../components/ImageLeft';
+import InputField from '../components/InputField'; 
+import Link from 'next/link';
 
 const LoginPage: React.FC = () => {
   return (
