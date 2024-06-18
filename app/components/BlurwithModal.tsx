@@ -4,7 +4,7 @@ import CustomModal from '../components/CustomModal';
 const BlurWithModal: React.FC = () => {
     const handleButtonClick = () => {
         // Handle button click logic here
-        console.log('OK button clicked');
+        console.log('/auth/ResetPassword');
       };
   return (
     <div className="fixed inset-0 flex justify-end items-center z-20">
@@ -36,3 +36,5 @@ const BlurWithModal: React.FC = () => {
 }
 
 export default BlurWithModal;
+
+

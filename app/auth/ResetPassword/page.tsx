@@ -1,10 +1,18 @@
+'use client';
 import ImageLeft from '@/app/components/ImageLeft';
+import React, { useState } from 'react';
 import InputField from '@/app/components/InputField';
-import React from 'react'
+import BlurWithModal from '@/app/components/BlurwithModal'; // Import the BlurWithModal component
 
 const ResetPassword: React.FC = () => {
+  const [isBlurVisible, setIsBlurVisible] = useState(false);
+
+  const handleBlurToggle = () => {
+    setIsBlurVisible(!isBlurVisible);
+  };
   return (
     <div className='bg-white min-h-screen w-screen flex justify-center items-center'>
+      {isBlurVisible && <BlurWithModal />}
       <div className='min-h-[80vh] w-11/12 lg:w-3/4 flex flex-col lg:flex-row justify-between h-full gap-5'>
         <ImageLeft />
         <div className='flex-1 flex flex-col justify-center items-center mt-8 lg:mt-0'>
@@ -20,7 +28,11 @@ const ResetPassword: React.FC = () => {
                 <div className="w-full flex justify-end mb-4">
                 </div>
                 <p className='font-Poppins text-base font-light text-purple-500 mb-4'>Passwords should match</p>
-                <button className="w-full h-12 flex justify-center items-center text-white bg-purple-500 rounded text-lg font-normal font-Poppins">Confirm</button>
+                <button 
+                  onClick={handleBlurToggle} 
+                  className="w-full h-12 flex justify-center items-center text-white bg-purple-500 rounded text-lg font-normal font-Poppins">
+                  Confirm
+                </button>
               </div>
             </div>
           </div>

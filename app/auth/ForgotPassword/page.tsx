@@ -10,6 +10,7 @@ const ForgotPassword: React.FC = () => {
   const handleBlurToggle = () => {
     setIsBlurVisible(!isBlurVisible);
   };
+  
 
   return (
     <div className='bg-white min-h-screen w-screen flex justify-center items-center relative'>
