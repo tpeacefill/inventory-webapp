@@ -28,7 +28,7 @@ const CustomModal = () => {
         We’ve sent an email to peacefillt**@outlook.com with a link to reset your password
       </p>
       <div className="self-stretch mt-6 w-full bg-black bg-opacity-10 min-h-[1px]" />
-      <div className="mt-2 text-lg leading-6 text-purple-500 font-Poppins">OK</div>
+      <div className="mt-3 text-lg leading-6 text-purple-500 font-Poppins">OK</div>
     </div>
   );
 }
