@@ -1,6 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation'; // Change import to next/navigation
+import Image from 'next/image';
 
 const Home = () => {
   const router = useRouter();
@@ -23,7 +24,7 @@ const Home = () => {
       <div className="max-w-screen-md mx-auto px-4">
         <div className="logo-container flex flex-col items-center">
           <div className="mb-4 animate-fadeIn">
-            <img src="/Logo.svg" alt="Logo" width={120} height={120} />
+          <Image src="/Logo.svg" alt="Logo" width={120} height={120} />
           </div>
           <div className="logo-text flex items-center">
             {showLittleAndS && (
