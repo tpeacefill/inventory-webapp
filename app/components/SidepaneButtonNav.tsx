@@ -1,22 +1,18 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 
-type SidepaneButtonNavProps = {
-  svg: ReactNode; // ReactNode allows any JSX/React element
+type SidepaneButtonProps = {
+  icon: React.ReactNode;
   text: string;
-  isActive: boolean;
+  className?: string;
 };
 
-const SidepaneButtonNav: React.FC<SidepaneButtonNavProps> = ({ svg, text, isActive }) => {
+const SidepaneButton: React.FC<SidepaneButtonProps> = ({ icon, text, className }) => {
   return (
-    <button
-      className={`flex gap-4 px-10 py-2 text-base whitespace-nowrap rounded ${
-        isActive ? 'bg-purple-500 bg-opacity-30' : 'bg-transparent'
-      }`}
-    >
-      {svg}
-      <p className='font-poppins'>{text}</p>
+    <button className={`flex gap-4 px-10 py-2.5 text-base whitespace-nowrap rounded bg-purple-500 bg-opacity-30 mb-5 ${className}`}>
+      {icon}
+      <p className='font-poppins text-black text-[15.75px] font-normal leading-normal'>{text}</p>
     </button>
   );
 };
 
-export default SidepaneButtonNav;
+export default SidepaneButton;
