@@ -4,7 +4,7 @@ import Sidepanel from '../components/Sidepanel'
 
 const Overview = () => {
   return (
-    <div  className="bg-zinc-50 min-h-[982px]" >
+    <div  className="flex flex-col bg-zinc-50" >
       <Menubar/>
       <Sidepanel/>
     </div>
