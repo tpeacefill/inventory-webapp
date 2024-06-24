@@ -3,6 +3,8 @@ import SidepaneButton from './SidepaneButtonNav';
 import Notice from './Notice';
 
 const Sidepanel = () => {
+
+  
   const overviewIcon = (
     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
       <path d="M8.96061 1.00015H1.43535C1.18655 1.00015 1 1.18669 1 1.43549V8.77408C1 9.02287 1.18654 9.20942 1.43535 9.20942H8.77403C9.02283 9.20942 9.20938 9.02288 9.20938 8.77408V1.24891C9.20938 1.12463 9.08509 1.00012 8.96059 1.00012L8.96061 1.00015Z" stroke="black" strokeWidth="1.25" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
