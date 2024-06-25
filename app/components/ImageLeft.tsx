@@ -1,4 +1,5 @@
 // ImageLeft.js
+import Image from 'next/image';
 import React from 'react';
 
 const ImageLeft = () => {
@@ -7,7 +8,7 @@ const ImageLeft = () => {
          style={{ backgroundImage: 'url("/loginImage.png")' }}>
       <div className='flex flex-col justify-start items-start p-4 h-full'>
         <div className='flex flex-col justify-center items-center'>
-          <img src="/Logo.svg" alt="Logo" className='h-[70px] w-[70px]' />
+          <Image src="/Logo.svg" alt="Logo" className='h-[70px] w-[70px]' />
           <div className='flex flex-row mt-1 justify-center items-center'>
             <p className="font-Poppins text-black mr-1">Little</p>
             <p className="text-xl font-medium text-purple-500 font-Poppins">S</p>

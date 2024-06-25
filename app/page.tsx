@@ -1,7 +1,7 @@
-'use client'
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation'; // Change import to next/navigation
-import Image from 'next/image';
+"use client";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation"; // Change import to next/navigation
+import Image from "next/image";
 
 const Home = () => {
   const router = useRouter();
@@ -15,7 +15,7 @@ const Home = () => {
 
     // Navigate to login screen after 5 seconds
     setTimeout(() => {
-      router.push('/auth'); // Redirect using next/navigation
+      router.push("/auth"); // Redirect using next/navigation
     }, 8000); // 5000 milliseconds = 5 seconds
   }, [router]);
 
@@ -24,7 +24,7 @@ const Home = () => {
       <div className="max-w-screen-md mx-auto px-4">
         <div className="logo-container flex flex-col items-center">
           <div className="mb-4 animate-fadeIn">
-          <Image src="/Logo.svg" alt="Logo" width={120} height={120} />
+            <Image src="/Logo.svg" alt="Logo" width={120} height={120} />
           </div>
           <div className="logo-text flex items-center">
             {showLittleAndS && (
