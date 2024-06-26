@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation"; // Change import to next/navigation
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 const Home = () => {
@@ -13,10 +13,10 @@ const Home = () => {
     setTimeout(() => setShowLittleAndS(true), 1000);
     setTimeout(() => setShowStockpile(true), 2000);
 
-    // Navigate to login screen after 5 seconds
+    // Navigate to login screen after 8 seconds
     setTimeout(() => {
-      router.push("/auth"); // Redirect using next/navigation
-    }, 8000); // 5000 milliseconds = 5 seconds
+      router.push("/auth");
+    }, 8000);
   }, [router]);
 
   return (
@@ -29,7 +29,7 @@ const Home = () => {
           <div className="logo-text flex items-center">
             {showLittleAndS && (
               <>
-                <p className="text-black font-normal text-lg font-Poppins mr-2 animate-fadeIn ">
+                <p className="text-black font-normal text-lg font-Poppins mr-2 animate-fadeIn">
                   Little
                 </p>
                 <p className="text-purple-600 font-medium text-4xl leading-tight font-Poppins animate-fadeIn">

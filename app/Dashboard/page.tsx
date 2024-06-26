@@ -9,7 +9,7 @@ const Overview = () => {
       <Menubar />
       <div className="flex flex-grow">
         <Sidepanel />
-        <div className="flex-grow bg-gray-100 p-2 overflow-y-auto">
+        {/* <div className="flex-grow bg-gray-100 p-2 overflow-y-auto">
           <div className="flex gap-5 max-md:flex-col max-md:gap-0">
             <div className="flex flex-col w-[59%] max-md:ml-0 max-md:w-full">
               <div className="flex flex-col grow max-md:mt-3 max-md:max-w-full">
@@ -361,7 +361,7 @@ const Overview = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
