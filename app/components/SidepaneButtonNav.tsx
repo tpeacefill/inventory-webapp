@@ -20,9 +20,9 @@ const SidepaneButton: React.FC<SidepaneButtonProps> = ({
 
   return (
     <button
-      className={`hidden md:flex items-center gap-4 px-10 py-2.5 text-base whitespace-nowrap rounded mb-5 w-full lg:w-[198.45px] ${
+      className={`hidden md:flex items-center gap-4 px-10 py-2.5 text-base whitespace-nowrap rounded mb-5 ${
         isActive ? "bg-purple-500 bg-opacity-30" : "bg-transparent"
-      } ${className}`}
+      } ${className} md:w-[60px] mx-auto lg:w-[198.45px] w-full`}
       onClick={handleClick} // Handle click to toggle isActive
     >
       {icon}
