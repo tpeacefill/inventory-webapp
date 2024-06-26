@@ -173,85 +173,69 @@ const Sidepanel = () => {
   );
 
   return (
-    <div className="w-full md:w-64 bg-white border-r border-black border-opacity-10 flex flex-col items-center py-2 border-solid max-w-[220px] sm:max-w-[60px] lg:max-w-[220px] sticky">
-  {/* SidepaneButtons */}
-  <div className="flex flex-col w-full items-center">
-    <SidepaneButton icon={overviewIcon} text="Overview" />
-    <SidepaneButton icon={ProductsIcon} text="Products" />
-    <SidepaneButton icon={CategoriesIcon} text="Categories" />
-    <SidepaneButton icon={SuppliersIcon} text="Suppliers" />
-    <SidepaneButton icon={OrdersIcon} text="Orders" />
-  </div>
-
-  {/* Divider */}
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="100%"
-    height="2"
-    viewBox="0 0 220 2"
-    fill="none"
-    className="mt-5 mb-10"
-  >
-    <path
-      d="M0 1H220"
-      stroke="black"
-      stroke-opacity="0.1"
-      stroke-width="1.05"
-    />
-  </svg>
-
-  {/* Reports and Settings */}
-  <div className="flex flex-col w-full items-center">
-    <SidepaneButton icon={ReportsIcon} text="Reports" />
-    <SidepaneButton icon={SettingsIcon} text="Settings" />
-  </div>
-
-  {/* Notice */}
-  <div className="hidden md:hidden lg:block w-full">
-    <Notice />
-  </div>
-
-  {/* Divider */}
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="100%"
-    height="2"
-    viewBox="0 0 220 2"
-    fill="none"
-    className="mt-5 mb-5"
-  >
-    <path
-      d="M0 1H220"
-      stroke="black"
-      stroke-opacity="0.1"
-      stroke-width="1.05"
-    />
-  </svg>
-
-  {/* Logout */}
-  <div className="hidden md:hidden lg:flex gap-3.5 text-base text-black whitespace-nowrap">
+    <div className="hidden md:flex md:w-[70px] lg:w-64 bg-white border-r border-black border-opacity-10 flex-col items-center pt-2 border-solid max-w-[220px] sticky">
+    {/* SidepaneButtons */}
+    <div className="flex flex-col w-full items-center">
+      <SidepaneButton icon={overviewIcon} text="Overview" />
+      <SidepaneButton icon={ProductsIcon} text="Products" />
+      <SidepaneButton icon={CategoriesIcon} text="Categories" />
+      <SidepaneButton icon={SuppliersIcon} text="Suppliers" />
+      <SidepaneButton icon={OrdersIcon} text="Orders" />
+    </div>
+  
+    {/* Divider */}
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
+      width="100%"
+      height="2"
+      viewBox="0 0 220 2"
       fill="none"
+      className="mt-5 mb-5"
     >
       <path
-        d="M10.504 3H17.5C18.605 3 19.5 4.151 19.5 5.571L19.5 18.43C19.5 19.849 18.605 21 17.5 21H10.5M8 8.5L4.5 12L8 15.5M14.5 12.004L4.5 12.004"
+        d="M0 1H220"
         stroke="black"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        stroke-opacity="0.1"
+        stroke-width="1.05"
       />
     </svg>
-    <p className="my-auto font-poppins text-black text-[15.75px] font-normal leading-normal">
-      Logout
-    </p>
+  
+    {/* Reports and Settings */}
+    <div className="flex flex-col w-full items-center">
+      <SidepaneButton icon={ReportsIcon} text="Reports" />
+      <SidepaneButton icon={SettingsIcon} text="Settings" />
+    </div>
+  
+    {/* Notice */}
+    <div className="hidden lg:block w-full">
+      <Notice />
+    </div>
+  
+    {/* Logout */}
+    <div className="justify-center items-center flex h-14 border-t border-solid border-black border-opacity-10 mt-auto w-full">
+    <button className="hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+      >
+        <path
+          d="M10.504 3H17.5C18.605 3 19.5 4.151 19.5 5.571L19.5 18.43C19.5 19.849 18.605 21 17.5 21H10.5M8 8.5L4.5 12L8 15.5M14.5 12.004L4.5 12.004"
+          stroke="black"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+      {/* Conditionally hide based on container width */}
+      <p className="my-auto font-poppins text-black text-[15.75px] font-normal leading-normal md:hidden lg:block">
+        Logout
+      </p>
+    </button>
+    </div>
   </div>
-</div>
-
-
   );
 };
 
