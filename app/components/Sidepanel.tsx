@@ -1,14 +1,40 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Notice from "./Notice";
 
-const Sidepanel = () => {
-  
+const Sidepanel: React.FC = () => {
+  // State to track which button is active
+  const [activeButton, setActiveButton] = useState<string | null>(null);
+
+  // Function to handle button click and set active button
+  const handleButtonClick = (buttonName: string) => {
+    if (activeButton === buttonName) {
+      // Clicked on active button, deactivate it
+      setActiveButton(null);
+    } else {
+      // Clicked on a different button, activate it
+      setActiveButton(buttonName);
+    }
+  };
+
+  // Function to determine button styles based on active state
+  const getButtonStyles = (buttonName: string) => {
+    return activeButton === buttonName
+      ? "bg-purple-500 bg-opacity-30"
+      : "bg-transparent";
+  };
+
   return (
     <div className="hidden md:flex md:w-[70px] lg:w-64 bg-white border-r border-black border-opacity-10 flex-col items-center pt-2 border-solid max-w-[220px] sticky">
       {/* SidepaneButtons */}
       <div className="flex flex-col w-full items-center">
         <div className="justify-center items-center flex h-14 mt-auto w-full">
-          <button className="hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap h-4/5 w-4/5 md:justify-center md:pl-0 lg:pl-9 lg:justify-start rounded">
+          <button
+            className={`hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap h-4/5 w-4/5 md:justify-center md:pl-0 lg:pl-9 lg:justify-start rounded ${getButtonStyles(
+              "overview"
+            )}`}
+            onClick={() => handleButtonClick("overview")}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="22"
@@ -56,7 +82,12 @@ const Sidepanel = () => {
           </button>
         </div>
         <div className="justify-center items-center flex h-14 mt-auto w-full">
-          <button className="hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap h-4/5 w-4/5 md:justify-center md:pl-0 lg:pl-9 lg:justify-start rounded">
+          <button
+            className={`hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap h-4/5 w-4/5 md:justify-center md:pl-0 lg:pl-9 lg:justify-start rounded ${getButtonStyles(
+              "products"
+            )}`}
+            onClick={() => handleButtonClick("products")}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -77,7 +108,12 @@ const Sidepanel = () => {
         </div>
 
         <div className="justify-center items-center flex h-14  mt-auto w-full">
-          <button className="hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap h-4/5 w-4/5 md:justify-center md:pl-0 lg:pl-9 lg:justify-start rounded">
+          <button
+            className={`hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap h-4/5 w-4/5 md:justify-center md:pl-0 lg:pl-9 lg:justify-start rounded ${getButtonStyles(
+              "categories"
+            )}`}
+            onClick={() => handleButtonClick("categories")}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="19"
@@ -112,7 +148,12 @@ const Sidepanel = () => {
         </div>
 
         <div className="justify-center items-center flex h-14  mt-auto w-full">
-          <button className="hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap h-4/5 w-4/5 md:justify-center md:pl-0 lg:pl-9 lg:justify-start rounded">
+          <button
+            className={`hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap h-4/5 w-4/5 md:justify-center md:pl-0 lg:pl-9 lg:justify-start rounded ${getButtonStyles(
+              "suppliers"
+            )}`}
+            onClick={() => handleButtonClick("suppliers")}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -148,7 +189,12 @@ const Sidepanel = () => {
         </div>
 
         <div className="justify-center items-center flex h-14 mt-auto w-full">
-          <button className="hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap h-4/5 w-4/5 md:justify-center md:pl-0 lg:pl-9 lg:justify-start rounded">
+          <button
+            className={`hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap h-4/5 w-4/5 md:justify-center md:pl-0 lg:pl-9 lg:justify-start rounded ${getButtonStyles(
+              "orders"
+            )}`}
+            onClick={() => handleButtonClick("orders")}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -189,7 +235,12 @@ const Sidepanel = () => {
       {/* Reports and Settings */}
       <div className="flex flex-col w-full items-center mb-5">
         <div className="justify-center items-center flex h-14 mt-auto w-full">
-          <button className="hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap h-4/5 w-4/5 md:justify-center md:pl-0 lg:pl-9 lg:justify-start rounded">
+          <button
+            className={`hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap h-4/5 w-4/5 md:justify-center md:pl-0 lg:pl-9 lg:justify-start rounded ${getButtonStyles(
+              "reports"
+            )}`}
+            onClick={() => handleButtonClick("reports")}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -211,7 +262,12 @@ const Sidepanel = () => {
         </div>
 
         <div className="justify-center items-center flex h-14 mt-auto w-full">
-          <button className="hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap h-4/5 w-4/5 md:justify-center md:pl-0 lg:pl-9 lg:justify-start rounded">
+          <button
+            className={`hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap h-4/5 w-4/5 md:justify-center md:pl-0 lg:pl-9 lg:justify-start rounded ${getButtonStyles(
+              "settings"
+            )}`}
+            onClick={() => handleButtonClick("settings")}
+          >
             {" "}
             <svg
               xmlns="http://www.w3.org/2000/svg"
