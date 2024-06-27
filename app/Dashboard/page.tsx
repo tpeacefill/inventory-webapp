@@ -7,9 +7,9 @@ const Overview = () => {
   return (
     <div className="flex flex-col h-screen w-screen bg-zinc-50">
       <Menubar />
-      <div className="flex flex-grow h-full">
+      <div className="flex flex-grow h-full w-full">
         <Sidepanel />
-        <div className="flex-grow bg-gray-100 p-2  flex flex-col">
+        <div className="flex-grow bg-gray-100 p-2  flex flex-col flex-shrink">
           <div className="flex gap-5 max-md:flex-col max-md:gap-0 1265px:flex-col overflow-auto">
             <div className="flex flex-col w-[59%] max-md:ml-0 max-md:w-full 1265px:w-full">
               <div className="flex flex-col grow max-md:mt-3 max-md:max-w-full">
@@ -93,10 +93,10 @@ const Overview = () => {
                 <div className="flex flex-col px-2.5 pt-2 pb-20 mt-2 text-base font-light bg-white shadow max-md:max-w-full">
                   <div className="w-full flex pb-1 border-b border-solid border-black border-opacity-10">
                     <h3 className="self-start text-base font-medium text-black font-Poppins">
-                    Recent Activity
+                      Recent Activity
                     </h3>
                   </div>
-                  <div className="flex gap-5 justify-between px-8 py-4 mt-3 text-xs uppercase whitespace-nowrap rounded-md shadow-sm bg-neutral-50 text-black text-opacity-50 max-md:flex-wrap max-md:px-5 max-md:max-w-full">
+                  <div className="flex gap-5 justify-between px-4 py-4 mt-3 text-xs uppercase whitespace-nowrap rounded-md shadow-sm bg-neutral-50 text-black text-opacity-50 max-md:flex-wrap max-md:px-5 max-md:max-w-full">
                     <h4 className="font-Poppins">ACTIVITY</h4>
                     <h4 className="font-Poppins">DESCRIPTION</h4>
                     <h4 className="self-start font-Poppins">TIME</h4>
@@ -130,7 +130,7 @@ const Overview = () => {
                 <div className="flex flex-col py-4 bg-white shadow max-md:max-w-full">
                   <div className="w-full pl-7 flex pb-1 border-b border-solid border-black border-opacity-10">
                     <h3 className="self-start text-base font-medium text-black font-Poppins">
-                    Stock Alerts
+                      Stock Alerts
                     </h3>
                   </div>
                   <div className="flex gap-5 mx-7 text-xs leading-4 text-black text-opacity-50 max-md:flex-wrap max-md:mr-2.5 max-md:max-w-full">
@@ -330,22 +330,21 @@ const Overview = () => {
                       />
                     </svg>
                     <div className="flex flex-row items-center w-full justify-center space-x-2">
-                        <p className="text-xs leading-4 text-black text-opacity-50 font-Poppins">
-                          Best Performing Category -
-                        </p>
-                        <p className="text-4xl font-semibold text-black text-opacity-20 font-Poppins">
-                          _ _
-                        </p>
-                        <div className="flex flex-col">
+                      <p className="text-xs leading-4 text-black text-opacity-50 font-Poppins">
+                        Best Performing Category -
+                      </p>
+                      <p className="text-4xl font-semibold text-black text-opacity-20 font-Poppins">
+                        _ _
+                      </p>
+                      <div className="flex flex-col">
                         <p className="text-xs leading-4 text-black text-opacity-50 font-Poppins">
                           Unavailable
                         </p>
                         <p className="text-xs leading-4 text-black text-opacity-50 font-Poppins">
                           Restock / month
                         </p>
-                        </div>
-                     </div>
-
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
