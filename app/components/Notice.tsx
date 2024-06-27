@@ -2,7 +2,7 @@ import React from "react";
 
 const Notice = () => {
   return (
-    <div  className="flex flex-col w-[96%] px-4 py-5 text-white bg-purple-500 rounded my-auto mx-auto">
+    <div  className="flex flex-col w-[90%] px-4 py-5 text-white bg-purple-500 rounded my-auto mx-auto">
       <div className="flex gap-5 justify-between text-xs text-black">
         <div className="justify-center px-2 py-2 bg-orange-50 rounded-sm">
           Test Mode

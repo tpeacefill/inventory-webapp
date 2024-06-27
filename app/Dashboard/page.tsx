@@ -334,7 +334,7 @@ const Overview = () => {
                           Best Performing Category -
                         </p>
                         <p className="text-4xl font-semibold text-black text-opacity-20 font-Poppins">
-                          4X
+                          _ _
                         </p>
                         <div className="flex flex-col">
                         <p className="text-xs leading-4 text-black text-opacity-50 font-Poppins">
