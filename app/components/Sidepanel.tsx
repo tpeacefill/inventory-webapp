@@ -30,7 +30,7 @@ const Sidepanel: React.FC = () => {
       <div className="flex flex-col w-full items-center">
         <div className="justify-center items-center flex h-14 mt-auto w-full">
           <button
-            className={`hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap h-4/5 w-4/5 md:justify-center md:pl-0 lg:pl-9 lg:justify-start rounded ${getButtonStyles(
+            className={`hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap h-4/5 w-[94%] md:justify-center md:pl-0 lg:pl-9 lg:justify-start rounded ${getButtonStyles(
               "overview"
             )}`}
             onClick={() => handleButtonClick("overview")}
@@ -83,7 +83,7 @@ const Sidepanel: React.FC = () => {
         </div>
         <div className="justify-center items-center flex h-14 mt-auto w-full">
           <button
-            className={`hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap h-4/5 w-4/5 md:justify-center md:pl-0 lg:pl-9 lg:justify-start rounded ${getButtonStyles(
+            className={`hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap h-4/5 w-[94%] md:justify-center md:pl-0 lg:pl-9 lg:justify-start rounded ${getButtonStyles(
               "products"
             )}`}
             onClick={() => handleButtonClick("products")}
@@ -109,7 +109,7 @@ const Sidepanel: React.FC = () => {
 
         <div className="justify-center items-center flex h-14  mt-auto w-full">
           <button
-            className={`hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap h-4/5 w-4/5 md:justify-center md:pl-0 lg:pl-9 lg:justify-start rounded ${getButtonStyles(
+            className={`hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap h-4/5 w-[94%] md:justify-center md:pl-0 lg:pl-9 lg:justify-start rounded ${getButtonStyles(
               "categories"
             )}`}
             onClick={() => handleButtonClick("categories")}
@@ -149,7 +149,7 @@ const Sidepanel: React.FC = () => {
 
         <div className="justify-center items-center flex h-14  mt-auto w-full">
           <button
-            className={`hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap h-4/5 w-4/5 md:justify-center md:pl-0 lg:pl-9 lg:justify-start rounded ${getButtonStyles(
+            className={`hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap h-4/5 w-[94%] md:justify-center md:pl-0 lg:pl-9 lg:justify-start rounded ${getButtonStyles(
               "suppliers"
             )}`}
             onClick={() => handleButtonClick("suppliers")}
@@ -190,7 +190,7 @@ const Sidepanel: React.FC = () => {
 
         <div className="justify-center items-center flex h-14 mt-auto w-full">
           <button
-            className={`hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap h-4/5 w-4/5 md:justify-center md:pl-0 lg:pl-9 lg:justify-start rounded ${getButtonStyles(
+            className={`hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap h-4/5 w-[94%] md:justify-center md:pl-0 lg:pl-9 lg:justify-start rounded ${getButtonStyles(
               "orders"
             )}`}
             onClick={() => handleButtonClick("orders")}
@@ -236,7 +236,7 @@ const Sidepanel: React.FC = () => {
       <div className="flex flex-col w-full items-center mb-5">
         <div className="justify-center items-center flex h-14 mt-auto w-full">
           <button
-            className={`hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap h-4/5 w-4/5 md:justify-center md:pl-0 lg:pl-9 lg:justify-start rounded ${getButtonStyles(
+            className={`hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap h-4/5 w-[94%] md:justify-center md:pl-0 lg:pl-9 lg:justify-start rounded ${getButtonStyles(
               "reports"
             )}`}
             onClick={() => handleButtonClick("reports")}
@@ -263,7 +263,7 @@ const Sidepanel: React.FC = () => {
 
         <div className="justify-center items-center flex h-14 mt-auto w-full">
           <button
-            className={`hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap h-4/5 w-4/5 md:justify-center md:pl-0 lg:pl-9 lg:justify-start rounded ${getButtonStyles(
+            className={`hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap h-4/5 w-[94%] md:justify-center md:pl-0 lg:pl-9 lg:justify-start rounded ${getButtonStyles(
               "settings"
             )}`}
             onClick={() => handleButtonClick("settings")}

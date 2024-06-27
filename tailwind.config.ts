@@ -36,6 +36,9 @@ const config: Config = {
       fontFamily: {
         Poppins: ['var(--poppins)'],
       },
+      screens: {
+        '1265px': { 'max': '1265px' },
+      },
     },
   },
   plugins: [],
