@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Menubar = () => {
   return (
-    <div className="flex justify-between items-center px-5 py-3 bg-white border-b border-black border-opacity-10 max-md:flex-wrap gap-5">
+    <div className="flex justify-between items-center px-5 py-3 bg-white border-b border-black border-opacity-10 max-md:flex-wrap gap-5 sticky">
       <div className="flex items-center gap-4 text-black">
         <Image
           src="/Logo.svg"
