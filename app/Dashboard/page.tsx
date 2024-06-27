@@ -3,6 +3,7 @@ import Menubar from "../components/Menubar";
 import Sidepanel from "../components/Sidepanel";
 import Image from "next/image";
 import CenteredDiv from "../components/CenteredDiv";
+import SeperatedDiv from "../components/SeperatedDiv";
 
 const Overview = () => {
   return (
@@ -73,7 +74,7 @@ const Overview = () => {
                      <Image src={"/LoadingIcon.svg"} alt="loadingicon" height={25}  width={30}  className="mt-14 w-10 aspect-square max-md:mt-10"/>
                   </div>
                 </div>
-                <div className="flex flex-col px-2.5 pt-2 pb-10 mt-2 text-base font-light bg-white shadow max-md:max-w-full">
+                <div className="flex flex-col px-2.5 pt-2 pb-7 mt-2 text-base font-light bg-white shadow max-md:max-w-full">
                   <div className="w-full flex pb-1 border-b border-solid border-black border-opacity-10">
                     <h3 className="self-start text-base font-medium text-black font-Poppins">
                       Recent Activity
@@ -176,8 +177,8 @@ const Overview = () => {
                       </p>
                     </div>
                   </div>
-                  <div className="flex flex-col px-9 pt-4 mx-7 mt-3 rounded-md shadow bg-neutral-50 max-md:px-5 max-md:mr-2.5 max-md:max-w-full">
-                    <div className="flex gap-2">
+                  <div className="flex flex-col px-5 pt-4 mx-7 mt-3 rounded-md shadow bg-neutral-50 max-md:px-5 max-md:mr-2.5 max-md:max-w-full">
+                    <div className="flex gap-2 mb-2">
                       <div className="flex flex-col grow shrink-0 basis-0 w-fit">
                         <div className="flex gap-2.5 text-base font-medium text-black">
                           <Image
@@ -192,37 +193,7 @@ const Overview = () => {
                         </div>
                       </div>
                     </div>
-
-                    <div className="flex flex-auto gap-2 flex-row mt-3 text-base font-[275] text-black text-opacity-80">
-                      <p className="grow font-Poppins">Product Name</p>
-                      <p className="text-right font-Poppins">Unavailable</p>
-                    </div>
-                    <div className="flex flex-auto gap-2 flex-row mt-3 text-base font-[275] text-black text-opacity-80">
-                      <p className="grow font-Poppins">Product Category</p>
-                      <p className="text-right font-Poppins">Unavailable</p>
-                    </div>
-                    <div className="flex gap-2 mt-3 text-base font-[275] text-black text-opacity-80">
-                      <p className="grow font-Poppins">
-                        Total Stock Locked (TSL)
-                      </p>
-                      <p className="my-auto text-right font-Poppins">
-                        Unavailable
-                      </p>
-                    </div>
-                    <div className="flex gap-2 mt-3 text-base font-[275] text-black text-opacity-80">
-                      <p className="grow font-Poppins">
-                        Total Stock Depleted (TSD)
-                      </p>
-                      <p className="my-auto text-right font-Poppins">
-                        Unavailable
-                      </p>
-                    </div>
-                    <div className="flex gap-2 mt-3 mb-4 text-base font-[275] text-black text-opacity-80">
-                      <p className="grow font-Poppins">Alert Type</p>
-                      <p className="my-auto text-right font-Poppins">
-                        Unavailable
-                      </p>
-                    </div>
+                   <SeperatedDiv count={4} />
                   </div>
                 </div>
                 <div className="flex flex-col px-8 py-4 mt-3 bg-white shadow max-md:px-5 max-md:max-w-full">
