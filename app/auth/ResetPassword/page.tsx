@@ -23,7 +23,7 @@ const ResetPassword: React.FC = () => {
           }
           title="Email Sent"
           message="Your password reset for your account was successful, you will be redirected to the sign in page in 5 seconds."
-          href='/Dashboard'
+          href='/Dashboard/Overview'
         />
       )}
       <div className='min-h-[80vh] w-11/12 lg:w-3/4 flex flex-col lg:flex-row justify-between h-full z-10 gap-8'>

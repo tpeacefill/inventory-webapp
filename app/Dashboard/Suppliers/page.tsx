@@ -1,9 +1,9 @@
 import React from "react";
-import Menubar from "../components/Menubar";
-import Sidepanel from "../components/Sidepanel";
+import Menubar from "../../components/Menubar";
+import Sidepanel from "../../components/Sidepanel";
 import Image from "next/image";
 
-const Settings = () => {
+const Suppliers = () => {
   return (
     <div className="flex flex-col h-screen w-screen bg-zinc-50">
       <Menubar />
@@ -19,4 +19,4 @@ const Settings = () => {
   );
 };
 
-export default Settings;
+export default Suppliers;

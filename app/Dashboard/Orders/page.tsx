@@ -1,6 +1,6 @@
 import React from "react";
-import Menubar from "../components/Menubar";
-import Sidepanel from "../components/Sidepanel";
+import Menubar from "../../components/Menubar";
+import Sidepanel from "../../components/Sidepanel";
 import Image from "next/image";
 
 const Orders = () => {

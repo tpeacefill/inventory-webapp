@@ -1,19 +1,41 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Notice from "./Notice";
+import { useRouter } from 'next/navigation';
 
 const Sidepanel: React.FC = () => {
-  // State to track which button is active
-  const [activeButton, setActiveButton] = useState<string | null>(null);
+  const router = useRouter();
+  const [activeButton, setActiveButton] = useState<string>("");
 
-  // Function to handle button click and set active button
   const handleButtonClick = (buttonName: string) => {
-    if (activeButton === buttonName) {
-      // Clicked on active button, deactivate it
-      setActiveButton(null);
-    } else {
-      // Clicked on a different button, activate it
-      setActiveButton(buttonName);
+    // Update the activeButton state with the clicked button's name first
+    setActiveButton(buttonName);
+
+    // Navigate to the corresponding page
+    switch (buttonName) {
+      case "overview":
+        router.push("/Dashboard/Overview");
+        break;
+      case "products":
+        router.push("/Dashboard/Products");
+        break;
+      case "categories":
+        router.push("/Dashboard/Categories");
+        break;
+      case "suppliers":
+        router.push("/Dashboard/Suppliers");
+        break;
+      case "orders":
+        router.push("/Dashboard/Orders");
+        break;
+      case "reports":
+        router.push("/Dashboard/Reports");
+        break;
+      case "settings":
+        router.push("/Dashboard/Settings");
+        break;
+      default:
+        break;
     }
   };
 
@@ -21,8 +43,13 @@ const Sidepanel: React.FC = () => {
   const getButtonStyles = (buttonName: string) => {
     return activeButton === buttonName
       ? "bg-purple-500 bg-opacity-30"
-      : "bg-transparent";
+      : "bg-transparent hover:bg-gray-100";
   };
+
+  // useEffect(() => {
+  //   // Set "overview" as the default active button when component mounts
+  //   setActiveButton("overview");
+  // }, []); // Empty dependency array ensures this effect runs only once
 
   return (
     <div className="hidden md:flex md:w-[70px] lg:w-64 bg-white border-r border-black border-opacity-10 flex-col items-center pt-2 border-solid max-w-[220px] sticky">
