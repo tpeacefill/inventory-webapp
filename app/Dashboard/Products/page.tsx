@@ -10,8 +10,88 @@ const Products = () => {
       <div className="flex flex-grow h-full w-full">
         <Sidepanel />
         <div className="flex-grow bg-gray-100 p-2  flex flex-col flex-shrink">
-          <div className="flex gap-5 max-md:flex-col max-md:gap-0 1265px:flex-col overflow-auto">
-        
+          <div className="flex gap-5 max-md:flex-col max-md:gap-0 1265px:flex-col overflow-auto h-full">
+            <div className="flex flex-col bg-white shadow w-full h-full">
+              <div className="w-full flex pb-1 border-b border-solid border-black border-opacity-10 pt-3 pl-3">
+                <h3 className="self-start text-base font-medium text-black font-Poppins">
+                  Available products
+                </h3>
+              </div>
+              <div className="flex gap-5 justify-between mt-6 mr-3 w-full max-md:flex-wrap max-md:mr-2.5 max-md:max-w-full pl-3 pr-3">
+                <div className="flex gap-1.5 px-3 py-1 text-base font-light whitespace-nowrap rounded-md border border-solid border-black border-opacity-10 text-black text-opacity-50 w-[30%]">
+                  <Image
+                    src="/search.svg"
+                    width={20}
+                    height={20}
+                    alt="Search"
+                  />
+                  <input
+                    type="text"
+                    className="flex-auto my-auto font-Poppins outline-none bg-transparent pl-2"
+                    placeholder="Search"
+                  />
+                </div>
+
+                <div className="flex gap-5 text-sm leading-4 text-white max-md:flex-wrap">
+                  <div className="flex gap-1.5 px-5 py-1 text-base font-light whitespace-nowrap rounded-md border border-solid border-black border-opacity-10 text-black text-opacity-50">
+                    <Image
+                      src="/filter.svg"
+                      width={20}
+                      height={20}
+                      alt="search"
+                    />
+                    <p className="flex-auto my-auto font-Poppins">Filter</p>
+                  </div>
+                  <div className="flex gap-1.5 px-5 py-1 text-base font-light whitespace-nowrap rounded-md border border-solid border-black border-opacity-10 text-black text-opacity-50">
+                    <Image
+                      src="/date.svg"
+                      width={20}
+                      height={20}
+                      alt="search"
+                    />
+                    <p className="flex-auto my-auto font-Poppins">Date</p>
+                  </div>
+                  <button className="flex gap-px px-5 py-3 bg-purple-500 rounded-md justify-center items-center">
+                    <Image src="/add.svg" width={20} height={20} alt="search" />
+                    <p className="my-auto font-Poppins">Add Product</p>
+                  </button>
+                </div>
+              </div>
+              <div className="flex justify-around pl-3 pr-3 py-4 mt-6 mr-3  ml-3 text-xs font-light uppercase rounded-md shadow-sm bg-neutral-50 text-black text-opacity-50 max-md:flex-wrap max-md:px-5 max-md:mr-2.5 max-md:max-w-full">
+                <div>PRODUCT NAME</div>
+                <div>SKU</div>
+                <div>ITEMS SOLD</div>
+                <div>UNIT PRICE</div>
+                <div>IN-STOCK</div>
+                <div>TOTAL VALUE</div>
+                <div>CURRENT VALUe</div>
+                <div>STATUS</div>
+                <div>CATEGORY</div>
+              </div>
+              <div className="flex flex-col justify-center items-center m-auto">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="40"
+                  height="40"
+                  viewBox="0 0 40 40"
+                  fill="none"
+                >
+                  <path
+                    d="M16.6667 16.6667L23.3333 23.3333M16.6667 23.3333L23.3333 16.6667M20 35C22.9667 35 25.8668 34.1203 28.3336 32.4721C30.8003 30.8238 32.7229 28.4811 33.8582 25.7403C34.9935 22.9994 35.2906 19.9834 34.7118 17.0737C34.133 14.1639 32.7044 11.4912 30.6066 9.3934C28.5088 7.29562 25.8361 5.86701 22.9264 5.28823C20.0166 4.70945 17.0006 5.0065 14.2597 6.14181C11.5189 7.27713 9.17618 9.19972 7.52796 11.6665C5.87973 14.1332 5 17.0333 5 20C5 22.48 5.6 24.8167 6.66667 26.8783L5 35L13.1217 33.3333C15.1817 34.3983 17.5217 35 20 35Z"
+                    stroke="black"
+                    stroke-opacity="0.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <p className="self-center mt-2.5 text-base font-light text-black text-opacity-40">
+                  No available products
+                </p>
+                <p className="self-center text-base font-medium text-purple-500">
+                  Click to add product
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
