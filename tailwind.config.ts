@@ -38,8 +38,6 @@ const config: Config = {
       },
       screens: {
         '1265px': { 'max': '1265px' },
-        hidden700: { 'max': '700px' },
-        'lg': '921px',
       },
     },
   },
