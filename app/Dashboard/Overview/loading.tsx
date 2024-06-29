@@ -1,18 +1,21 @@
+"use client";
 import React from "react";
 import Menubar from "../../components/Menubar";
 import Sidepanel from "../../components/Sidepanel";
 import Image from "next/image";
+import CenteredDiv from "../../components/CenteredDiv";
+import SeperatedDiv from "../../components/SeperatedDiv";
 
-const Overview = () => {
+const OverviewLoading = () => {
   return (
     <div className="flex flex-col h-screen w-screen bg-zinc-50">
       <Menubar />
       <div className="flex flex-grow h-full w-full">
         <Sidepanel />
-        <div className="flex-grow bg-gray-100 p-2  flex flex-col flex-shrink">
-          <div className="flex gap-5 max-md:flex-col max-md:gap-0 1265px:flex-col overflow-auto">
-            <div className="flex flex-col w-[59%] max-md:ml-0 max-md:w-full 1265px:w-full">
-              <div className="flex flex-col grow max-md:mt-3 max-md:max-w-full">
+        <div className="flex-grow bg-gray-100 p-2  flex flex-col flex-shrink h-full">
+          <div className="flex gap-5 max-md:flex-col max-md:gap-0 1265px:flex-col overflow-auto h-full">
+            <div className="flex flex-col h-full w-[59%] max-md:ml-0 max-md:w-full 1265px:w-full">
+              <div className="flex flex-col grow max-md:mt-3 max-md:max-w-full h-full">
                 <div className="flex flex-col px-2.5 pt-4 pb-7 bg-white shadow max-md:max-w-full">
                   <h3 className="text-base font-medium text-black max-md:max-w-full font-Poppins">
                     Key Metrics
@@ -69,59 +72,60 @@ const Overview = () => {
                         </svg>
                       </div>
                     </div>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="40"
-                      height="40"
-                      viewBox="0 0 40 40"
-                      fill="none"
+                    <Image
+                      src={"/LoadingIcon.svg"}
+                      alt="loadingicon"
+                      height={25}
+                      width={30}
                       className="mt-14 w-10 aspect-square max-md:mt-10"
-                    >
-                      <path
-                        d="M16.6667 16.6667L23.3333 23.3333M16.6667 23.3333L23.3333 16.6667M20 35C22.9667 35 25.8668 34.1203 28.3336 32.4721C30.8003 30.8238 32.7229 28.4811 33.8582 25.7403C34.9935 22.9994 35.2906 19.9834 34.7118 17.0737C34.133 14.1639 32.7044 11.4912 30.6066 9.3934C28.5088 7.29562 25.8361 5.86701 22.9264 5.28823C20.0166 4.70945 17.0006 5.0065 14.2597 6.14181C11.5189 7.27713 9.17618 9.19972 7.52796 11.6665C5.87973 14.1332 5 17.0333 5 20C5 22.48 5.6 24.8167 6.66667 26.8783L5 35L13.1217 33.3333C15.1817 34.3983 17.5217 35 20 35Z"
-                        stroke="black"
-                        stroke-opacity="0.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                    <p className="mt-2.5 mb-6 text-base font-light text-black text-opacity-40 font-Poppins">
-                      No data to show
-                    </p>
+                    />
                   </div>
                 </div>
-                <div className="flex flex-col px-2.5 pt-2 pb-20 mt-2 text-base font-light bg-white shadow max-md:max-w-full">
+                <div className="flex flex-col px-2.5 pt-2 h-[520px] pb-7 mt-2 text-base font-light bg-white shadow max-md:max-w-full">
                   <div className="w-full flex pb-1 border-b border-solid border-black border-opacity-10">
                     <h3 className="self-start text-base font-medium text-black font-Poppins">
                       Recent Activity
                     </h3>
                   </div>
-                  <div className="flex gap-5 justify-between px-4 py-4 mt-3 text-xs uppercase whitespace-nowrap rounded-md shadow-sm bg-neutral-50 text-black text-opacity-50 max-md:flex-wrap max-md:px-5 max-md:max-w-full">
-                    <h4 className="font-Poppins">ACTIVITY</h4>
-                    <h4 className="font-Poppins">DESCRIPTION</h4>
-                    <h4 className="self-start font-Poppins">TIME</h4>
-                    <h4 className="font-Poppins">STATUS</h4>
-                    <h4 className="font-Poppins">ADMIN</h4>
+                  <div className="h-full w-full">
+                    <div className="min-w-full bg-neutral-50 sticky top-0">
+                      <table className="min-w-full">
+                        <thead className="bg-neutral-50">
+                          <tr className="text-xs">
+                            <th className="px-3 py-4 font-light text-black text-opacity-50 uppercase font-Poppins">
+                              Activity
+                            </th>
+                            <th className="px-3 py-4 font-light text-black text-opacity-50 uppercase font-Poppins">
+                              Description
+                            </th>
+                            <th className="px-3 py-4 font-light text-black text-opacity-50 uppercase font-Poppins">
+                              Time
+                            </th>
+                            <th className="px-3 py-4 font-light text-black text-opacity-50 uppercase font-Poppins">
+                              Status
+                            </th>
+                            <th className="px-3 py-4 font-light text-black text-opacity-50 uppercase font-Poppins">
+                              Admin
+                            </th>
+                          </tr>
+                        </thead>
+                      </table>
+                    </div>
+                    <div className="h-[400px] w-full overflow-y-auto">
+                      <table className="min-w-full divide-y divide-gray-200 w-full">
+                        <tbody className="bg-white divide-y divide-gray-200 w-full">
+                          <tr className="text-sm font-light text-black text-opacity-70 w-fit">
+                            <td
+                              className="py-2 gap-y-3 overflow-y-auto h-[your-desired-height]"
+                              colSpan={9}
+                            >
+                              <CenteredDiv count={20} />
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="40"
-                    height="40"
-                    viewBox="0 0 40 40"
-                    fill="none"
-                    className="self-center mt-36 w-10 aspect-square max-md:mt-10"
-                  >
-                    <path
-                      d="M16.6667 16.6667L23.3333 23.3333M16.6667 23.3333L23.3333 16.6667M20 35C22.9667 35 25.8668 34.1203 28.3336 32.4721C30.8003 30.8238 32.7229 28.4811 33.8582 25.7403C34.9935 22.9994 35.2906 19.9834 34.7118 17.0737C34.133 14.1639 32.7044 11.4912 30.6066 9.3934C28.5088 7.29562 25.8361 5.86701 22.9264 5.28823C20.0166 4.70945 17.0006 5.0065 14.2597 6.14181C11.5189 7.27713 9.17618 9.19972 7.52796 11.6665C5.87973 14.1332 5 17.0333 5 20C5 22.48 5.6 24.8167 6.66667 26.8783L5 35L13.1217 33.3333C15.1817 34.3983 17.5217 35 20 35Z"
-                      stroke="black"
-                      stroke-opacity="0.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <p className="self-center mt-2.5 mb-16 text-black text-opacity-40 max-md:mb-10 font-Poppins">
-                    No activity here
-                  </p>
                 </div>
               </div>
             </div>
@@ -211,8 +215,8 @@ const Overview = () => {
                       </p>
                     </div>
                   </div>
-                  <div className="flex flex-col px-9 pt-4 mx-7 mt-3 rounded-md shadow bg-neutral-50 max-md:px-5 max-md:mr-2.5 max-md:max-w-full">
-                    <div className="flex gap-2">
+                  <div className="flex flex-col px-5 pt-4 mx-7 mt-3 rounded-md shadow bg-neutral-50 max-md:px-5 max-md:mr-2.5 max-md:max-w-full">
+                    <div className="flex gap-2 mb-2">
                       <div className="flex flex-col grow shrink-0 basis-0 w-fit">
                         <div className="flex gap-2.5 text-base font-medium text-black">
                           <Image
@@ -227,37 +231,7 @@ const Overview = () => {
                         </div>
                       </div>
                     </div>
-
-                    <div className="flex flex-auto gap-2 flex-row mt-3 text-base font-[275] text-black text-opacity-80">
-                      <p className="grow font-Poppins">Product Name</p>
-                      <p className="text-right font-Poppins">Unavailable</p>
-                    </div>
-                    <div className="flex flex-auto gap-2 flex-row mt-3 text-base font-[275] text-black text-opacity-80">
-                      <p className="grow font-Poppins">Product Category</p>
-                      <p className="text-right font-Poppins">Unavailable</p>
-                    </div>
-                    <div className="flex gap-2 mt-3 text-base font-[275] text-black text-opacity-80">
-                      <p className="grow font-Poppins">
-                        Total Stock Locked (TSL)
-                      </p>
-                      <p className="my-auto text-right font-Poppins">
-                        Unavailable
-                      </p>
-                    </div>
-                    <div className="flex gap-2 mt-3 text-base font-[275] text-black text-opacity-80">
-                      <p className="grow font-Poppins">
-                        Total Stock Depleted (TSD)
-                      </p>
-                      <p className="my-auto text-right font-Poppins">
-                        Unavailable
-                      </p>
-                    </div>
-                    <div className="flex gap-2 mt-3 mb-4 text-base font-[275] text-black text-opacity-80">
-                      <p className="grow font-Poppins">Alert Type</p>
-                      <p className="my-auto text-right font-Poppins">
-                        Unavailable
-                      </p>
-                    </div>
+                    <SeperatedDiv count={4} />
                   </div>
                 </div>
                 <div className="flex flex-col px-8 py-4 mt-3 bg-white shadow max-md:px-5 max-md:max-w-full">
@@ -356,4 +330,4 @@ const Overview = () => {
   );
 };
 
-export default Overview;
+export default OverviewLoading;
