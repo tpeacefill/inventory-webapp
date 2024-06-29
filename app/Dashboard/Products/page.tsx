@@ -3,9 +3,12 @@ import Menubar from "../../components/Menubar";
 import Sidepanel from "../../components/Sidepanel";
 import Image from "next/image";
 import CenteredDiv from "@/app/components/CenteredDiv";
+import { Suspense } from "react";
+import ProductsLoading from "@/app/LoadingUI/ProductsLoading";
 
 const Products = () => {
   return (
+    <Suspense fallback={<ProductsLoading />}>
     <div className="flex flex-col h-screen w-screen bg-zinc-50 overflow-hidden">
       <Menubar />
       <div className="flex flex-grow overflow-hidden">
@@ -153,6 +156,7 @@ const Products = () => {
         </div>
       </div>
     </div>
+    </Suspense>
   );
 };
 

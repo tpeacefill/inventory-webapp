@@ -3,7 +3,7 @@ import Menubar from "../../components/Menubar";
 import Sidepanel from "../../components/Sidepanel";
 import Image from "next/image";
 import { Suspense } from "react";
-import OverviewLoading from "@/app/components/OverviewLoading";
+import OverviewLoading from "@/app/LoadingUI/OverviewLoading";
 
 const Overview = () => {
   return (
