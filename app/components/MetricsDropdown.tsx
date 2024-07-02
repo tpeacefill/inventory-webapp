@@ -32,7 +32,7 @@ const Dropdown: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative" ref={dropdownRef}>
+    <div className="relative justify-center flex" ref={dropdownRef}>
       <div
         className="flex gap-2 items-center cursor-pointer"
         onClick={toggleDropdown}
@@ -74,9 +74,9 @@ const Dropdown: React.FC = () => {
       </div>
 
       {isOpen && (
-        <div className="absolute mt-2 bg-white border border-black border-opacity-5 rounded-md w-[170px] text-black text-opacity-50 text-xs leading-4">
+        <div className="absolute  bg-white border border-black border-opacity-5 rounded-md w-[170px] text-black text-opacity-50 text-xs leading-4 mt-8">
           <div
-            className="flex gap-0.5 px-7 py-3.5 bg-white rounded-md border-b border-solid border-black border-opacity-10 cursor-pointer"
+            className="flex gap-0.5 px-7 py-3.5 bg-white  border-b border-solid border-black border-opacity-10 cursor-pointer"
             onClick={() => handleOptionClick("of products")}
           >
             <svg
