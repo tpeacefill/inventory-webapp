@@ -1,66 +1,31 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { useRouter, usePathname } from "next/navigation";
 import Notice from "./Notice";
-import { useRouter } from 'next/navigation';
 
 const Sidepanel: React.FC = () => {
   const router = useRouter();
+  const pathname = usePathname();
   const [activeButton, setActiveButton] = useState<string>("");
 
-  const handleButtonClick = (buttonName: string) => {
-    // Update the activeButton state with the clicked button's name first
+  const handleButtonClick = (buttonName: string, path: string) => {
     setActiveButton(buttonName);
-
-    // Navigate to the corresponding page
-    switch (buttonName) {
-      case "overview":
-        router.push("/Dashboard/Overview");
-        break;
-      case "products":
-        router.push("/Dashboard/Products");
-        break;
-      case "categories":
-        router.push("/Dashboard/Categories");
-        break;
-      case "suppliers":
-        router.push("/Dashboard/Suppliers");
-        break;
-      case "orders":
-        router.push("/Dashboard/Orders");
-        break;
-      case "reports":
-        router.push("/Dashboard/Reports");
-        break;
-      case "settings":
-        router.push("/Dashboard/Settings");
-        break;
-      default:
-        break;
-    }
+    router.push(path);
   };
 
-  // Function to determine button styles based on active state
-  const getButtonStyles = (buttonName: string) => {
-    return activeButton === buttonName
-      ? "bg-purple-500 bg-opacity-30"
-      : "bg-transparent hover:bg-gray-100";
-  };
-
-  // useEffect(() => {
-  //   // Set "overview" as the default active button when component mounts
-  //   setActiveButton("overview");
-  // }, []); // Empty dependency array ensures this effect runs only once
+  const isActive = (path: string) => pathname === path;
 
   return (
     <div className="hidden md:flex md:w-[70px] lg:w-64 bg-white border-r border-black border-opacity-10 flex-col items-center pt-2 border-solid max-w-[220px] sticky">
-      {/* SidepaneButtons */}
       <div className="flex flex-col w-full items-center">
         <div className="justify-center items-center flex h-14 mt-auto w-full">
           <button
-            className={`hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap h-4/5 w-[94%] md:justify-center md:pl-0 lg:pl-9 lg:justify-start rounded ${getButtonStyles(
-              "overview"
-            )}`}
-            onClick={() => handleButtonClick("overview")}
+            className={`hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap h-4/5 w-[94%] md:justify-center md:pl-0 lg:pl-9 lg:justify-start rounded ${
+              isActive("/Dashboard/Overview")
+                ? "bg-purple-500 bg-opacity-30"
+                : ""
+            }`}
+            onClick={() => handleButtonClick("overview", "/Dashboard/Overview")}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -102,18 +67,20 @@ const Sidepanel: React.FC = () => {
                 strokeLinejoin="round"
               />
             </svg>
-            {/* Conditionally hide based on container width */}
             <p className="my-auto font-poppins text-black text-[15.75px] font-normal leading-normal md:hidden lg:block">
               Overview
             </p>
           </button>
         </div>
+
         <div className="justify-center items-center flex h-14 mt-auto w-full">
           <button
-            className={`hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap h-4/5 w-[94%] md:justify-center md:pl-0 lg:pl-9 lg:justify-start rounded ${getButtonStyles(
-              "products"
-            )}`}
-            onClick={() => handleButtonClick("products")}
+            className={`hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap h-4/5 w-[94%] md:justify-center md:pl-0 lg:pl-9 lg:justify-start rounded ${
+              isActive("/Dashboard/Products")
+                ? "bg-purple-500 bg-opacity-30"
+                : ""
+            }`}
+            onClick={() => handleButtonClick("products", "/Dashboard/Products")}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -127,19 +94,22 @@ const Sidepanel: React.FC = () => {
                 fill="black"
               />
             </svg>
-            {/* Conditionally hide based on container width */}
             <p className="my-auto font-poppins text-black text-[15.75px] font-normal leading-normal md:hidden lg:block">
               Products
             </p>
           </button>
         </div>
 
-        <div className="justify-center items-center flex h-14  mt-auto w-full">
+        <div className="justify-center items-center flex h-14 mt-auto w-full">
           <button
-            className={`hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap h-4/5 w-[94%] md:justify-center md:pl-0 lg:pl-9 lg:justify-start rounded ${getButtonStyles(
-              "categories"
-            )}`}
-            onClick={() => handleButtonClick("categories")}
+            className={`hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap h-4/5 w-[94%] md:justify-center md:pl-0 lg:pl-9 lg:justify-start rounded ${
+              isActive("/Dashboard/Categories")
+                ? "bg-purple-500 bg-opacity-30"
+                : ""
+            }`}
+            onClick={() =>
+              handleButtonClick("categories", "/Dashboard/Categories")
+            }
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -151,7 +121,7 @@ const Sidepanel: React.FC = () => {
               <path
                 d="M4.34272 9.49387L9.38889 1.41565L14.4351 9.49387H4.34272Z"
                 stroke="black"
-                stroke-width="1.5"
+                strokeWidth="1.5"
               />
               <rect
                 x="0.75"
@@ -159,27 +129,30 @@ const Sidepanel: React.FC = () => {
                 width="6.94444"
                 height="6.94"
                 stroke="black"
-                stroke-width="1.5"
+                strokeWidth="1.5"
               />
               <path
                 d="M18.2501 16.4152C18.2501 18.3312 16.6959 19.8852 14.7779 19.8852C12.8599 19.8852 11.3057 18.3312 11.3057 16.4152C11.3057 14.4991 12.8599 12.9452 14.7779 12.9452C16.6959 12.9452 18.2501 14.4991 18.2501 16.4152Z"
                 stroke="black"
-                stroke-width="1.5"
+                strokeWidth="1.5"
               />
             </svg>
-            {/* Conditionally hide based on container width */}
             <p className="my-auto font-poppins text-black text-[15.75px] font-normal leading-normal md:hidden lg:block">
               Categories
             </p>
           </button>
         </div>
 
-        <div className="justify-center items-center flex h-14  mt-auto w-full">
+        <div className="justify-center items-center flex h-14 mt-auto w-full">
           <button
-            className={`hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap h-4/5 w-[94%] md:justify-center md:pl-0 lg:pl-9 lg:justify-start rounded ${getButtonStyles(
-              "suppliers"
-            )}`}
-            onClick={() => handleButtonClick("suppliers")}
+            className={`hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap h-4/5 w-[94%] md:justify-center md:pl-0 lg:pl-9 lg:justify-start rounded ${
+              isActive("/Dashboard/Suppliers")
+                ? "bg-purple-500 bg-opacity-30"
+                : ""
+            }`}
+            onClick={() =>
+              handleButtonClick("suppliers", "/Dashboard/Suppliers")
+            }
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -208,7 +181,6 @@ const Sidepanel: React.FC = () => {
                 </clipPath>
               </defs>
             </svg>
-            {/* Conditionally hide based on container width */}
             <p className="my-auto font-poppins text-black text-[15.75px] font-normal leading-normal md:hidden lg:block">
               Suppliers
             </p>
@@ -217,10 +189,10 @@ const Sidepanel: React.FC = () => {
 
         <div className="justify-center items-center flex h-14 mt-auto w-full">
           <button
-            className={`hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap h-4/5 w-[94%] md:justify-center md:pl-0 lg:pl-9 lg:justify-start rounded ${getButtonStyles(
-              "orders"
-            )}`}
-            onClick={() => handleButtonClick("orders")}
+            className={`hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap h-4/5 w-[94%] md:justify-center md:pl-0 lg:pl-9 lg:justify-start rounded ${
+              isActive("/Dashboard/Orders") ? "bg-purple-500 bg-opacity-30" : ""
+            }`}
+            onClick={() => handleButtonClick("orders", "/Dashboard/Orders")}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -234,7 +206,6 @@ const Sidepanel: React.FC = () => {
                 fill="black"
               />
             </svg>
-            {/* Conditionally hide based on container width */}
             <p className="my-auto font-poppins text-black text-[15.75px] font-normal leading-normal md:hidden lg:block">
               Orders
             </p>
@@ -242,7 +213,6 @@ const Sidepanel: React.FC = () => {
         </div>
       </div>
 
-      {/* Divider */}
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="100%"
@@ -259,14 +229,15 @@ const Sidepanel: React.FC = () => {
         />
       </svg>
 
-      {/* Reports and Settings */}
       <div className="flex flex-col w-full items-center mb-5">
         <div className="justify-center items-center flex h-14 mt-auto w-full">
           <button
-            className={`hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap h-4/5 w-[94%] md:justify-center md:pl-0 lg:pl-9 lg:justify-start rounded ${getButtonStyles(
-              "reports"
-            )}`}
-            onClick={() => handleButtonClick("reports")}
+            className={`hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap h-4/5 w-[94%] md:justify-center md:pl-0 lg:pl-9 lg:justify-start rounded ${
+              isActive("/Dashboard/Reports")
+                ? "bg-purple-500 bg-opacity-30"
+                : ""
+            }`}
+            onClick={() => handleButtonClick("reports", "/Dashboard/Reports")}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -281,7 +252,7 @@ const Sidepanel: React.FC = () => {
                 stroke-width="1.5"
               />
             </svg>
-            {/* Conditionally hide based on container width */}
+
             <p className="my-auto font-poppins text-black text-[15.75px] font-normal leading-normal md:hidden lg:block">
               Reports
             </p>
@@ -290,12 +261,13 @@ const Sidepanel: React.FC = () => {
 
         <div className="justify-center items-center flex h-14 mt-auto w-full">
           <button
-            className={`hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap h-4/5 w-[94%] md:justify-center md:pl-0 lg:pl-9 lg:justify-start rounded ${getButtonStyles(
-              "settings"
-            )}`}
-            onClick={() => handleButtonClick("settings")}
+            className={`hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap h-4/5 w-[94%] md:justify-center md:pl-0 lg:pl-9 lg:justify-start rounded ${
+              isActive("/Dashboard/Settings")
+                ? "bg-purple-500 bg-opacity-30"
+                : ""
+            }`}
+            onClick={() => handleButtonClick("settings", "/Dashboard/Settings")}
           >
-            {" "}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -314,7 +286,6 @@ const Sidepanel: React.FC = () => {
                 stroke-width="1.5"
               />
             </svg>
-            {/* Conditionally hide based on container width */}
             <p className="my-auto font-poppins text-black text-[15.75px] font-normal leading-normal md:hidden lg:block">
               Settings
             </p>
@@ -322,12 +293,10 @@ const Sidepanel: React.FC = () => {
         </div>
       </div>
 
-      {/* Notice */}
       <div className="hidden lg:block w-full">
         <Notice />
       </div>
 
-      {/* Logout */}
       <div className="justify-center items-center flex h-14 border-t border-solid border-black border-opacity-10 mt-auto w-full">
         <button className="hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap h-4/5 w-4/5 justify-center">
           <svg
@@ -345,7 +314,7 @@ const Sidepanel: React.FC = () => {
               stroke-linejoin="round"
             />
           </svg>
-          {/* Conditionally hide based on container width */}
+
           <p className="my-auto font-poppins text-black text-[15.75px] font-normal leading-normal md:hidden lg:block">
             Logout
           </p>

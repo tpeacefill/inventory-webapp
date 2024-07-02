@@ -1,7 +1,7 @@
-"use client";
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 
+// Example custom icons, replace these with your actual icons
 const OverviewIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -44,7 +44,6 @@ const OverviewIcon = () => (
     />
   </svg>
 );
-
 const ProductsIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +58,6 @@ const ProductsIcon = () => (
     />
   </svg>
 );
-
 const CategoriesIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -88,7 +86,6 @@ const CategoriesIcon = () => (
     />
   </svg>
 );
-
 const SuppliersIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -118,7 +115,6 @@ const SuppliersIcon = () => (
     </defs>
   </svg>
 );
-
 const OrdersIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -133,7 +129,6 @@ const OrdersIcon = () => (
     />
   </svg>
 );
-
 const ReportsIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -149,7 +144,6 @@ const ReportsIcon = () => (
     />
   </svg>
 );
-
 const SettingsIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -170,151 +164,52 @@ const SettingsIcon = () => (
     />
   </svg>
 );
-// Define button data
-const buttonData = [
+
+const buttons = [
+  { name: "Overview", path: "/Dashboard/Overview", icon: <OverviewIcon /> },
+  { name: "Products", path: "/Dashboard/Products", icon: <ProductsIcon /> },
   {
-    id: "overview",
-    label: "Overview",
-    icon: OverviewIcon,
-    path: "/Dashboard/Overview",
-  },
-  {
-    id: "products",
-    label: "Products",
-    icon: ProductsIcon,
-    path: "/Dashboard/Products",
-  },
-  {
-    id: "categories",
-    label: "Categories",
-    icon: CategoriesIcon,
+    name: "Categories",
     path: "/Dashboard/Categories",
+    icon: <CategoriesIcon />,
   },
-  {
-    id: "suppliers",
-    label: "Suppliers",
-    icon: SuppliersIcon,
-    path: "/Dashboard/Suppliers",
-  },
-  {
-    id: "orders",
-    label: "Orders",
-    icon: OrdersIcon,
-    path: "/Dashboard/Orders",
-  },
-  {
-    id: "reports",
-    label: "Reports",
-    icon: ReportsIcon,
-    path: "/Dashboard/Reports",
-  },
-  {
-    id: "settings",
-    label: "Settings",
-    icon: SettingsIcon,
-    path: "/Dashboard/Settings",
-  },
+  { name: "Suppliers", path: "/Dashboard/Suppliers", icon: <SuppliersIcon /> },
+  { name: "Orders", path: "/Dashboard/Orders", icon: <OrdersIcon /> },
+  { name: "Reports", path: "/Dashboard/Reports", icon: <ReportsIcon /> },
+  { name: "Settings", path: "/Dashboard/Settings", icon: <SettingsIcon /> },
 ];
 
-const Sidepanel: React.FC = () => {
+const SideNavigation = () => {
   const router = useRouter();
-  const [activeButton, setActiveButton] = useState<string>("");
+  const [activeButton, setActiveButton] = useState("Overview");
 
-  const handleButtonClick = (buttonId: string, path: string) => {
-    if (activeButton !== buttonId) {
-      setActiveButton(buttonId);
-      router.push(path);
-    }
+  const handleNavigation = (button: {
+    name: string;
+    path: string;
+    icon: JSX.Element;
+  }) => {
+    setActiveButton(button.name);
+    router.push(button.path);
   };
-
-  // Function to determine button styles based on active state
-  const getButtonStyles = (buttonId: string) => {
-    return activeButton === buttonId
-      ? "bg-purple-500 bg-opacity-30"
-      : "bg-transparent hover:bg-gray-100";
-  };
-
-  useEffect(() => {
-    // Set "overview" as the default active button when component mounts
-    setActiveButton("overview");
-  }, []); // Empty dependency array ensures this effect runs only once
 
   return (
-    <div className="hidden md:flex md:w-[70px] lg:w-64 bg-white border-r border-black border-opacity-10 flex-col items-center pt-2 border-solid max-w-[220px] sticky">
-      {/* SidepaneButtons */}
-      <div className="flex flex-col w-full items-center">
-        {buttonData.map((button) => (
-          <div
-            key={button.id}
-            className="justify-center items-center flex h-14 mt-auto w-full"
-          >
-            <button
-              className={`hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap h-4/5 w-[94%] md:justify-center md:pl-0 lg:pl-9 lg:justify-start rounded ${getButtonStyles(
-                button.id
-              )}`}
-              onClick={() => handleButtonClick(button.id, button.path)}
-            >
-              <button.icon /> {/* Assume each icon is imported and defined */}
-              {/* Conditionally hide based on container width */}
-              <p className="my-auto font-poppins text-black text-[15.75px] font-normal leading-normal md:hidden lg:block">
-                {button.label}
-              </p>
-            </button>
-          </div>
-        ))}
-      </div>
-
-      {/* Divider */}
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="100%"
-        height="2"
-        viewBox="0 0 220 2"
-        fill="none"
-        className="mt-5 mb-5"
-      >
-        <path
-          d="M0 1H220"
-          stroke="black"
-          stroke-opacity="0.1"
-          stroke-width="1.05"
-        />
-      </svg>
-
-      {/* Reports and Settings */}
-      <div className="flex flex-col w-full items-center mb-5">
-        <div className="justify-center items-center flex h-14 mt-auto w-full">
-          <button
-            className={`hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap h-4/5 w-[94%] md:justify-center md:pl-0 lg:pl-9 lg:justify-start rounded ${getButtonStyles(
-              "reports"
-            )}`}
-            onClick={() => handleButtonClick("reports", "/Dashboard/Reports")}
-          >
-            <ReportsIcon />
-            {/* Conditionally hide based on container width */}
-            <p className="my-auto font-poppins text-black text-[15.75px] font-normal leading-normal md:hidden lg:block">
-              Reports
-            </p>
-          </button>
-        </div>
-
-        <div className="justify-center items-center flex h-14 mt-auto w-full">
-          <button
-            className={`hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap h-4/5 w-[94%] md:justify-center md:pl-0 lg:pl-9 lg:justify-start rounded ${getButtonStyles(
-              "settings"
-            )}`}
-            onClick={() => handleButtonClick("settings", "/Dashboard/Settings")}
-          >
-            <SettingsIcon />
-            {/* Conditionally hide based on container width */}
-            <p className="my-auto font-poppins text-black text-[15.75px] font-normal leading-normal md:hidden lg:block">
-              Settings
-            </p>
-          </button>
-        </div>
-      </div>
+    <div className="justify-center items-center flex h-14 mt-auto w-full">
+      {buttons.map((button) => (
+        <button
+          key={button.name}
+          onClick={() => handleNavigation(button)}
+          className={`hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap h-4/5 w-[94%] md:justify-center md:pl-0 lg:pl-9 lg:justify-start rounded ${
+            activeButton === button.name
+              ? "bg-purple-500 bg-opacity-30"
+              : "bg-transparent"
+          }`}
+        >
+          <span className="mr-2">{button.icon}</span>
+          {button.name}
+        </button>
+      ))}
     </div>
   );
 };
 
-export default Sidepanel;
+export default SideNavigation;
