@@ -1,9 +1,16 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 
-const Dropdown: React.FC = () => {
+interface DropdownProps {
+  selectedOption: string;
+  setSelectedOption: (option: string) => void;
+}
+
+const Dropdown: React.FC<DropdownProps> = ({
+  selectedOption,
+  setSelectedOption,
+}) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [selectedOption, setSelectedOption] = useState<string>("of products");
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const toggleDropdown = (): void => {
