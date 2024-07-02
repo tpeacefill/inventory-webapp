@@ -33,7 +33,10 @@ const Dropdown: React.FC = () => {
 
   return (
     <div className="relative" ref={dropdownRef}>
-      <div className="flex gap-2 items-center cursor-pointer">
+      <div
+        className="flex gap-2 items-center cursor-pointer"
+        onClick={toggleDropdown}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="20"
@@ -54,7 +57,6 @@ const Dropdown: React.FC = () => {
           height="8"
           viewBox="0 0 14 8"
           fill="none"
-          onClick={toggleDropdown}
           style={{ cursor: "pointer" }}
         >
           <path
@@ -90,7 +92,7 @@ const Dropdown: React.FC = () => {
                 fillOpacity="0.5"
               />
             </svg>
-            <div className="my-auto">of products</div>
+            <p className="my-auto font-Poppins">of products</p>
           </div>
           <div
             className="flex gap-0.5 px-7 py-3.5 bg-white rounded-md cursor-pointer"
@@ -109,7 +111,7 @@ const Dropdown: React.FC = () => {
                 fillOpacity="0.5"
               />
             </svg>
-            <div className="my-auto">of stock value</div>
+            <p className="my-auto font-Poppins">of stock value</p>
           </div>
         </div>
       )}
