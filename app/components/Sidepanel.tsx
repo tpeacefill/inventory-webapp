@@ -67,7 +67,7 @@ const Sidepanel: React.FC = () => {
                 strokeLinejoin="round"
               />
             </svg>
-            <p className="my-auto font-poppins text-black text-[15.75px] font-normal leading-normal md:hidden lg:block">
+            <p className="my-auto font-Poppins text-black text-[15.75px] font-normal leading-normal md:hidden lg:block">
               Overview
             </p>
           </button>
@@ -94,7 +94,7 @@ const Sidepanel: React.FC = () => {
                 fill="black"
               />
             </svg>
-            <p className="my-auto font-poppins text-black text-[15.75px] font-normal leading-normal md:hidden lg:block">
+            <p className="my-auto font-Poppins text-black text-[15.75px] font-normal leading-normal md:hidden lg:block">
               Products
             </p>
           </button>
@@ -137,7 +137,7 @@ const Sidepanel: React.FC = () => {
                 strokeWidth="1.5"
               />
             </svg>
-            <p className="my-auto font-poppins text-black text-[15.75px] font-normal leading-normal md:hidden lg:block">
+            <p className="my-auto font-Poppins text-black text-[15.75px] font-normal leading-normal md:hidden lg:block">
               Categories
             </p>
           </button>
@@ -181,7 +181,7 @@ const Sidepanel: React.FC = () => {
                 </clipPath>
               </defs>
             </svg>
-            <p className="my-auto font-poppins text-black text-[15.75px] font-normal leading-normal md:hidden lg:block">
+            <p className="my-auto font-Poppins text-black text-[15.75px] font-normal leading-normal md:hidden lg:block">
               Suppliers
             </p>
           </button>
@@ -206,7 +206,7 @@ const Sidepanel: React.FC = () => {
                 fill="black"
               />
             </svg>
-            <p className="my-auto font-poppins text-black text-[15.75px] font-normal leading-normal md:hidden lg:block">
+            <p className="my-auto font-Poppins text-black text-[15.75px] font-normal leading-normal md:hidden lg:block">
               Orders
             </p>
           </button>
@@ -253,7 +253,7 @@ const Sidepanel: React.FC = () => {
               />
             </svg>
 
-            <p className="my-auto font-poppins text-black text-[15.75px] font-normal leading-normal md:hidden lg:block">
+            <p className="my-auto font-Poppins text-black text-[15.75px] font-normal leading-normal md:hidden lg:block">
               Reports
             </p>
           </button>
@@ -286,7 +286,7 @@ const Sidepanel: React.FC = () => {
                 stroke-width="1.5"
               />
             </svg>
-            <p className="my-auto font-poppins text-black text-[15.75px] font-normal leading-normal md:hidden lg:block">
+            <p className="my-auto font-Poppins text-black text-[15.75px] font-normal leading-normal md:hidden lg:block">
               Settings
             </p>
           </button>
@@ -315,7 +315,7 @@ const Sidepanel: React.FC = () => {
             />
           </svg>
 
-          <p className="my-auto font-poppins text-black text-[15.75px] font-normal leading-normal md:hidden lg:block">
+          <p className="my-auto font-Poppins text-black text-[15.75px] font-normal leading-normal md:hidden lg:block">
             Logout
           </p>
         </button>
