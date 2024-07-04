@@ -17,13 +17,14 @@ const Menubar: React.FC = () => {
         setIsNotificationVisible(false);
       }
     };
-
+  
     document.addEventListener('mousedown', handleClickOutside);
-
+  
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
+  
 
   const toggleNotification = () => {
     setIsNotificationVisible((prev) => !prev);

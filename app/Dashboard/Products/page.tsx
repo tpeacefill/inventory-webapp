@@ -2,7 +2,6 @@ import React from "react";
 import Menubar from "../../components/Menubar";
 import Sidepanel from "../../components/Sidepanel";
 import Image from "next/image";
-import CenteredDiv from "@/app/components/CenteredDiv";
 import { Suspense } from "react";
 import ProductsLoading from "@/app/LoadingUI/ProductsLoading";
 
