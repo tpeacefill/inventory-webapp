@@ -298,7 +298,13 @@ const Sidepanel: React.FC = () => {
       </div>
 
       <div className="justify-center items-center flex h-14 border-t border-solid border-black border-opacity-10 mt-auto w-full">
-        <button className="hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap h-4/5 w-4/5 justify-center">
+        <button
+          className={`hidden md:flex lg:flex gap-3.5 items-center text-base text-black whitespace-nowrap h-4/5 w-4/5 justify-center ${
+              isActive("/auth")
+            }`}
+            onClick={() => handleButtonClick("reports", "/auth")}
+          
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
